@@ -1,6 +1,6 @@
 import { Summary, Transaction } from "@/src/constants";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const STORAGE_KEY = "@expense_tracker_transactions";
 
@@ -110,8 +110,8 @@ export function TransactionProvider({
 }
 
 // 4. Hook personalizado para consumir el contexto
-const useTransactions = () => {
-  const context = createContext(TransactionContext);
+export const useTransactions = () => {
+  const context = useContext(TransactionContext);
   if (!context) {
     throw new Error(
       "useTransactions debe usarse dentro de TransactionProvider",
