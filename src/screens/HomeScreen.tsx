@@ -10,7 +10,7 @@ import { TransactionItem } from "@/src/components/TransactionItem";
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1, //1
     backgroundColor: Colors.background,
   },
   centered: {
